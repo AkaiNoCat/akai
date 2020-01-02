@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>first_app</title>
+</head>
+<body>
+<h1>MyFirstApp</h1>
+<ul type="disc">
+    <li>APP设置</li>
+    <li type="none">
+        <ol type="1">
+            <li>创建:python manager.py startapp {{ app_name }}</li>
+            <li>注册:settings.py INSTALLED_APPS += ['{{ app_name }}']</li>
+        </ol>
+    <li>路由设置</li>
+    <li type="none">
+        <ol type="1">
+            <li>设置路由: project/urls.py import include urlpatterns += [ r'url',include('{{ app_name }}.urls')</li>
+            <li>当前URL:{{ url }}</li>
+            <li>利用url的name参数,可以进行别名引用{{ name }}</li>
+            <li>同时可以利用别名进行 路由反向解析 reverse('app_name:name')</li>
+        </ol>
+    </li>
+</ul>
+</body>
+</html>
